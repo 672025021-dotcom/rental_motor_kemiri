@@ -1,0 +1,813 @@
+:root {
+    --rental-ink: #172033;
+    --rental-muted: #64748b;
+    --rental-primary: #4f46e5;
+    --rental-primary-dark: #3730a3;
+    --rental-primary-soft: #eef2ff;
+    --rental-surface: #fff;
+    --rental-background: #f8fafc;
+    --rental-border: #e5eaf2;
+    --rental-amber: #f59e0b;
+    --rental-emerald: #059669;
+    --rental-shadow: 0 18px 42px rgba(23, 32, 51, 0.1);
+    --bs-primary: #4f46e5;
+    --bs-primary-rgb: 79, 70, 229;
+    --bs-link-color: #4f46e5;
+    --bs-link-hover-color: #3730a3;
+    --bs-body-color: #172033;
+    --bs-body-bg: #f8fafc;
+    --bs-border-color: #e5eaf2;
+    --bs-font-sans-serif: "Plus Jakarta Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--rental-ink);
+    background: var(--rental-background);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+main.container {
+    flex: 1 0 auto;
+    width: min(100% - 2rem, 1320px);
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: var(--rental-ink);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+}
+
+.text-muted {
+    color: var(--rental-muted) !important;
+}
+
+a {
+    text-underline-offset: 0.18em;
+}
+
+.site-navbar {
+    min-height: 76px;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--rental-ink);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+.site-brand:hover {
+    color: var(--rental-primary);
+}
+
+.site-brand__mark {
+    width: 2.35rem;
+    height: 2.35rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.8rem;
+    color: #fff;
+    background: linear-gradient(145deg, #6366f1, #4338ca);
+    box-shadow: 0 7px 16px rgba(79, 70, 229, 0.24);
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.navbar .nav-link {
+    padding: 0.65rem 0.8rem !important;
+    border-radius: 0.65rem;
+    color: #475569;
+    font-weight: 600;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--rental-primary);
+    background: var(--rental-primary-soft);
+}
+
+.navbar .navbar-toggler {
+    border-color: var(--rental-border);
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.18);
+}
+
+.nav-cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.nav-cart-count {
+    min-width: 1.35rem;
+    height: 1.35rem;
+    display: inline-grid;
+    place-items: center;
+    padding: 0 0.3rem;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--rental-primary);
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.nav-register-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-register-link {
+    min-width: 6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.65rem 1.1rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.profile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--rental-border);
+    border-radius: 0.8rem;
+    color: var(--rental-ink);
+    background: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.profile-menu-toggle:hover,
+.profile-menu-toggle:focus {
+    border-color: #c7d2fe;
+    color: var(--rental-primary-dark);
+    background: var(--rental-primary-soft);
+}
+
+.profile-menu-toggle::after {
+    margin-left: 0.1rem;
+}
+
+.profile-avatar {
+    width: 1.9rem;
+    height: 1.9rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--rental-primary-dark);
+    background: #e0e7ff;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.profile-menu-name {
+    max-width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dropdown-menu {
+    min-width: 14rem;
+    padding: 0.45rem;
+    border-radius: 0.9rem;
+}
+
+.dropdown-item {
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.55rem;
+    font-size: 0.88rem;
+}
+
+.alert {
+    border: 0;
+    border-radius: 0.9rem;
+}
+
+.alert-dismissible {
+    padding-right: 3.25rem;
+}
+
+.btn {
+    min-height: 2.65rem;
+    border-radius: 0.7rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    border-color: var(--rental-primary);
+    background: var(--rental-primary);
+    box-shadow: 0 5px 13px rgba(79, 70, 229, 0.16);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: var(--rental-primary-dark);
+    background: var(--rental-primary-dark);
+    box-shadow: 0 7px 18px rgba(79, 70, 229, 0.23);
+}
+
+.btn-outline-primary {
+    border-color: #c7d2fe;
+    color: var(--rental-primary-dark);
+}
+
+.btn-outline-primary:hover {
+    border-color: var(--rental-primary);
+    color: #fff;
+    background: var(--rental-primary);
+}
+
+.form-label {
+    margin-bottom: 0.45rem;
+    color: #334155;
+    font-size: 0.86rem;
+    font-weight: 650;
+}
+
+.form-control,
+.form-select {
+    min-height: 2.85rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid #dbe2ec;
+    border-radius: 0.7rem;
+    color: var(--rental-ink);
+    background-color: #fff;
+    font-size: 0.9rem;
+}
+
+textarea.form-control {
+    min-height: auto;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 0.22rem rgba(99, 102, 241, 0.16);
+}
+
+.form-check-input:checked {
+    border-color: var(--rental-primary);
+    background-color: var(--rental-primary);
+}
+
+.form-text {
+    color: var(--rental-muted);
+    font-size: 0.78rem;
+}
+
+.card {
+    border: 1px solid var(--rental-border);
+    border-radius: 1rem;
+    background: var(--rental-surface);
+    box-shadow: 0 7px 22px rgba(23, 32, 51, 0.045);
+}
+
+.card-body {
+    padding: 1.35rem;
+}
+
+.card-title {
+    letter-spacing: -0.025em;
+}
+
+.home-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 5rem);
+    border-radius: 1.4rem;
+    color: #fff;
+    background:
+        radial-gradient(circle at 85% 25%, rgba(255, 255, 255, 0.2), transparent 25%),
+        linear-gradient(125deg, #172554 0%, #3730a3 54%, #6366f1 100%);
+}
+
+.home-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 690px;
+}
+
+.home-hero__eyebrow,
+.section-eyebrow {
+    display: inline-block;
+    color: #c7d2fe;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-eyebrow {
+    color: var(--rental-primary);
+}
+
+.home-hero h1 {
+    max-width: 650px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.home-hero .lead {
+    max-width: 570px;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.home-hero__decoration {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.home-hero__circle {
+    position: absolute;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+}
+
+.home-hero__circle--one {
+    width: 420px;
+    height: 420px;
+    right: -80px;
+    top: -90px;
+}
+
+.home-hero__circle--two {
+    width: 290px;
+    height: 290px;
+    right: 15px;
+    bottom: -190px;
+}
+
+.home-section {
+    padding-top: 1.25rem;
+}
+
+.feature-card,
+.booking-step {
+    padding: 1.6rem;
+    border: 1px solid var(--rental-border);
+    border-radius: 1rem;
+    background: var(--rental-surface);
+    box-shadow: 0 8px 24px rgba(23, 32, 51, 0.04);
+}
+
+.feature-card__icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    color: var(--rental-primary-dark);
+    background: #eef2ff;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.motor-card {
+    overflow: hidden;
+    border: 1px solid var(--rental-border);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(23, 32, 51, 0.055);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.motor-card:hover,
+.motor-card:focus-within {
+    transform: translateY(-5px);
+    border-color: #c7d2fe;
+    box-shadow: var(--rental-shadow);
+}
+
+.motor-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #eef2f7;
+    transition: transform 240ms ease;
+}
+
+.motor-card:hover .motor-card__image,
+.motor-card:focus-within .motor-card__image {
+    transform: scale(1.035);
+}
+
+.motor-card__type,
+.motor-card__availability {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    color: var(--rental-primary-dark);
+    background: #eef2ff;
+    font-size: 0.74rem;
+    font-weight: 750;
+}
+
+.motor-card__availability {
+    color: #047857;
+    background: #d1fae5;
+}
+
+.motor-card__price {
+    color: var(--rental-primary-dark);
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+.motor-card__price small {
+    color: var(--rental-muted);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.booking-step {
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-step__number {
+    color: var(--rental-primary);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.detail-image-frame {
+    overflow: hidden;
+    border: 1px solid var(--rental-border);
+    border-radius: 1.2rem;
+    background: #eef2f7;
+    box-shadow: var(--rental-shadow);
+}
+
+.detail-image-frame img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.motor-spec-list dt {
+    color: var(--rental-muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.motor-spec-list dd {
+    color: var(--rental-ink);
+    font-weight: 650;
+}
+
+.booking-summary-card {
+    position: sticky;
+    top: 6.5rem;
+}
+
+.checkout-step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--rental-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.checkout-step-indicator__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.checkout-step-indicator__number {
+    width: 1.7rem;
+    height: 1.7rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--rental-primary);
+    font-size: 0.72rem;
+}
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: #f8fafc;
+    --bs-table-hover-bg: #f1f5f9;
+    color: var(--rental-ink);
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.9rem 0.8rem;
+    border-bottom-color: var(--rental-border);
+}
+
+.table thead th {
+    color: #64748b;
+    background: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.table-responsive {
+    border: 1px solid var(--rental-border);
+    border-radius: 0.9rem;
+    background: #fff;
+}
+
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.72rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 750;
+}
+
+.badge-status--pending {
+    color: #92400e !important;
+    background: #fef3c7 !important;
+}
+
+.badge-status--dikonfirmasi {
+    color: #1d4ed8 !important;
+    background: #dbeafe !important;
+}
+
+.badge-status--berjalan {
+    color: #6d28d9 !important;
+    background: #ede9fe !important;
+}
+
+.badge-status--selesai {
+    color: #047857 !important;
+    background: #d1fae5 !important;
+}
+
+.badge-status--dibatalkan {
+    color: #b91c1c !important;
+    background: #fee2e2 !important;
+}
+
+.booking-timeline {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 2rem;
+    list-style: none;
+}
+
+.booking-timeline::before {
+    position: absolute;
+    top: 0.35rem;
+    bottom: 0.65rem;
+    left: 0.48rem;
+    width: 2px;
+    background: #e0e7ff;
+    content: "";
+}
+
+.booking-timeline__item {
+    position: relative;
+    padding: 0 0 1.5rem;
+}
+
+.booking-timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.booking-timeline__item::before {
+    position: absolute;
+    top: 0.28rem;
+    left: -2rem;
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: var(--rental-primary);
+    box-shadow: 0 0 0 2px #a5b4fc;
+    content: "";
+}
+
+.booking-timeline__item:first-child::before {
+    background: var(--rental-emerald);
+    box-shadow: 0 0 0 2px #a7f3d0;
+}
+
+.booking-timeline__meta {
+    color: var(--rental-muted);
+    font-size: 0.78rem;
+}
+
+.cart-item-card {
+    overflow: hidden;
+}
+
+.cart-item-image {
+    width: 100%;
+    min-height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #eef2f7;
+}
+
+.cart-delivery-address {
+    padding: 1rem;
+    border: 1px solid var(--rental-border);
+    border-radius: 0.8rem;
+    background: #f8fafc;
+}
+
+.document-upload-card {
+    padding: 1rem;
+    border: 1px solid var(--rental-border);
+    border-radius: 0.85rem;
+    background: #f8fafc;
+}
+
+.booking-detail-card .card-body {
+    padding: 1.4rem;
+}
+
+.page-heading {
+    min-height: 5.5rem;
+}
+
+.empty-state {
+    padding: clamp(2rem, 6vw, 4rem) 1.5rem;
+    border: 1px dashed #cbd5e1;
+    border-radius: 1.1rem;
+    background: linear-gradient(180deg, #fff, #f8fafc);
+    text-align: center;
+}
+
+.empty-state__icon {
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1rem;
+    border-radius: 1.2rem;
+    color: var(--rental-primary);
+    background: #eef2ff;
+    font-size: 1.65rem;
+}
+
+.site-footer {
+    flex-shrink: 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rental-border);
+    color: var(--rental-muted);
+    background: #fff;
+    font-size: 0.82rem;
+}
+
+.site-footer__brand {
+    color: var(--rental-ink);
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.site-footer__brand:hover {
+    color: var(--rental-primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-collapse {
+        padding: 0.75rem 0 1rem;
+    }
+
+    .nav-register-item {
+        justify-content: center;
+        padding-top: 0.35rem;
+    }
+
+    .profile-menu-toggle {
+        margin-top: 0.5rem;
+    }
+
+    .booking-summary-card {
+        position: static;
+    }
+}
+
+@media (max-width: 575.98px) {
+    main.container {
+        width: min(100% - 1.25rem, 1320px);
+        padding-top: 1.25rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .home-hero {
+        min-height: 0;
+        padding: 2rem 1.4rem;
+        border-radius: 1rem;
+    }
+
+    .home-hero h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .home-hero__circle--one {
+        right: -260px;
+    }
+
+    .card-body {
+        padding: 1.05rem;
+    }
+
+    .motor-card__image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .profile-menu-name {
+        max-width: 8rem;
+    }
+
+    .cart-item-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .checkout-step-indicator {
+        gap: 0.4rem;
+        font-size: 0.68rem;
+    }
+
+    .checkout-step-indicator__step {
+        gap: 0.25rem;
+    }
+
+    .booking-timeline__meta {
+        white-space: normal !important;
+        text-align: right;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
