@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../includes/env.php';
 
-load_env(__DIR__ . '/../.env');
+// load_env(__DIR__ . '/../.env');
 
 $connection = env('DB_CONNECTION', 'mysql');
 if ($connection !== 'mysql') {
